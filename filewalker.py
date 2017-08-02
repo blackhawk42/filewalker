@@ -97,7 +97,7 @@ if __name__ == "__main__":
 					newname = "{}[{}]{}".format(base, crc, ext)
 					logger.debug("New name: {}".format(newname))
 					logger.info("Copying file from {} to {}".format(curfile, os.path.join(dest, newname)))
-					shutil.copyfile(curfile, os.path.join(dest, newname))
+					shutil.copy(curfile, os.path.join(dest, newname))
 		else:
 			logger.debug("Inside dump directory, nothing done")
 
