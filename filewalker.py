@@ -18,7 +18,7 @@ logger.addHandler(consoleHandler)
 #handler = logging.FileHandler('debugger.log')
 #logger.addHandler(handler)
 
-usage = "usage: {} [-r|--root=ROOT_DIR] [-o |--output=DUMP_DIR] [-a|--all] [-h|--help] [-d|--debug] [-s|--silent] EXTENSION1 [EXTENSION2 ...]".format(sys.argv[0])
+usage = "usage: {} [-r|--root=ROOT_DIR] [-o |--output=DUMP_DIR] [-a|--all] [-h|--help] [-d|--debug] [-s|--silent] EXTENSION1 [EXTENSION2 ...]".format(os.path.basename(sys.argv[0]))
 
 def get_random_name(length=8):
 	"""Random name generation, for filenames, etc."""
