@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.6
 
 import shutil			# File stuff
 import os, os.path		# Os and, specially, pathname manipulation
@@ -22,10 +22,12 @@ usage = "usage: {} [-r|--root=ROOT_DIR] [-o |--output=DUMP_DIR] [-a|--all] [-h|-
 
 def get_random_name(length=8):
 	"""Random name generation, for filenames, etc."""
-	chars = []
-	for i in range(length):
-		chars.append(random.choice(string.ascii_letters + string.digits))
-	return ''.join(chars)
+	
+	# For Python 3.5
+	#chars = []
+	#for i in range(length):
+	#	chars.append(random.choice(string.ascii_letters + string.digits))
+	return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
 		
 
 if __name__ == "__main__":
