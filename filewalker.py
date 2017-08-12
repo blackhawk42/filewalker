@@ -10,6 +10,7 @@ import getopt
 
 import random			# Form random names
 import string
+import uuid
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -20,14 +21,17 @@ logger.addHandler(consoleHandler)
 
 usage = "usage: {} [-r|--root=ROOT_DIR] [-o |--output=DUMP_DIR] [-a|--all] [-h|--help] [-d|--debug] [-s|--silent] EXTENSION1 [EXTENSION2 ...]".format(os.path.basename(sys.argv[0]))
 
-def get_random_name(length=8):
+def get_random_name():
 	"""Random name generation, for filenames, etc."""
 	
 	# For Python 3.5
 	#chars = []
 	#for i in range(length):
 	#	chars.append(random.choice(string.ascii_letters + string.digits))
-	return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+	#return ''.join(random.choices(string.ascii_letters + string.digits, k=length))
+
+	return str(uuid.uuid4())
 		
 
 if __name__ == "__main__":
